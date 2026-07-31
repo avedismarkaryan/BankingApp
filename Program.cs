@@ -21,7 +21,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-//accountları çektiğimiz get endpoint 
+//accountları çektiğimiz get endpoint
+/* 
 app.MapGet("/api/accounts", () => //örnek bir endpoint, MapGet-> GET isteğine cevap veren bir route tanımı
 {                                   //Controller sınıfı yazmadan direkt endpoint tanımlayabiliyorsun.
 
@@ -36,6 +37,7 @@ app.MapGet("/api/accounts", () => //örnek bir endpoint, MapGet-> GET isteğine 
 })
 .WithName("GetAccount")
 .WithOpenApi();
+*/
 
 //belirli bir accountu id ile çektiğimiz get endpoint 
 app.MapGet("/api/accounts/{id}",(int id) =>
@@ -113,6 +115,35 @@ app.MapDelete("/api/accounts/{id}",(int id) =>
 })
 .WithName("DeleteAccountById")
 .WithOpenApi();
+
+
+//Query String ile filtreleme yaptığımız get endpointi
+
+app.MapGet("/api/accounts",(decimal? minBalance , string? owner) =>
+{
+    var accounts = new []
+    {
+        new Account(Id:1,Owner:"ahmet",Balance:1500m),
+        new Account(Id:2,Owner:"zeynep",Balance:2500m),
+        new Account(Id:3,Owner:"mehmet",Balance:3500m),
+        new Account(Id:4,Owner:"elif",Balance:4500m),
+    };
+    IEnumerable<Account> result = accounts;
+
+    if(minBalance.HasValue)
+    {
+        result = result.Where(a=> a.Balance >= minBalance.Value);
+    }
+    if(owner != null)
+    {
+        result = result.Where(a=> a.Owner == owner);
+    }
+    return Results.Ok(result);
+
+})
+.WithDisplayName("GetAccountByCondition")
+.WithOpenApi();
+
 
 app.Run();
 
