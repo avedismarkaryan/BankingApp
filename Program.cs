@@ -20,28 +20,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
-/*
-app.MapGet("/weatherforecast", () => //örnek bir endpoint, MapGet-> GET isteğine cevap veren bir route tanımı
-{                                   //Controller sınıfı yazmadan direkt endpoint tanımlayabiliyorsun.
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
-*/
-
+//accountları çektiğimiz get endpoint 
 app.MapGet("/api/accounts", () => //örnek bir endpoint, MapGet-> GET isteğine cevap veren bir route tanımı
 {                                   //Controller sınıfı yazmadan direkt endpoint tanımlayabiliyorsun.
 
@@ -57,15 +37,26 @@ app.MapGet("/api/accounts", () => //örnek bir endpoint, MapGet-> GET isteğine 
 .WithName("GetAccount")
 .WithOpenApi();
 
-/*
-app.MapPost("/api/accounts",(Account newAccount) =>
+//belirli bir accountu id ile çektiğimiz get endpoint 
+app.MapGet("/api/accounts/{id}",(int id) =>
 {
-    return Results.Created($"/api/accounts/{newAccount.Id}",newAccount);
-})
-.WithName("CreateAccount")
-.WithOpenApi();
-*/
+    var accounts = new []
+    {
+        new Account(Id:1,Owner:"ahmet",Balance:1500m),
+        new Account(Id:2,Owner:"zeynep",Balance:2500m),
+        new Account(Id:3,Owner:"mehmet",Balance:3500m),
+        new Account(Id:4,Owner:"elif",Balance:4500m),
+    };
+    
+    var account = accounts.FirstOrDefault(a => a.Id == id); //şunu sor.
 
+    return account is not null ? Results.Ok(account) : Results.NotFound();
+
+})
+.WithName("GetAccountById")
+.WithOpenApi();
+
+//account eklediğimiz post endpoint 
 app.MapPost("/api/accounts",(Account newAccount) =>
 {
     return Results.Created($"/api/accounts/{newAccount.Id}",newAccount); //REST konvansiyonuna göre "yeni bir kaynak oluşturdum, işte onun adresi" demenin standart yolu bu.
@@ -74,8 +65,56 @@ app.MapPost("/api/accounts",(Account newAccount) =>
 .WithOpenApi();
 
 
-app.Run();
+//accountun balance'ını güncellediğimiz endpoint, put ile
 
+app.MapPut("/api/accounts/{id}", (int id, Account updatedAccount) =>
+{
+    var accounts = new []
+    {
+        new Account(Id:1,Owner:"ahmet",Balance:1500m),
+        new Account(Id:2,Owner:"zeynep",Balance:2500m),
+        new Account(Id:3,Owner:"mehmet",Balance:3500m),
+        new Account(Id:4,Owner:"elif",Balance:4500m),
+    };
+    var account = accounts.FirstOrDefault(a => a.Id == id);
+
+    if (account == null)
+    {
+        return Results.NotFound();
+    }
+    var updated = account with {Balance = updatedAccount.Balance};
+    return Results.Ok(updated);
+})
+.WithName("UpdateAccount")
+.WithOpenApi();
+
+
+//accountu id ile tespit edip sildiğimiz delete endpointi
+
+app.MapDelete("/api/accounts/{id}",(int id) =>
+{
+    var accounts = new []
+    {
+        new Account(Id:1,Owner:"ahmet",Balance:1500m),
+        new Account(Id:2,Owner:"zeynep",Balance:2500m),
+        new Account(Id:3,Owner:"mehmet",Balance:3500m),
+        new Account(Id:4,Owner:"elif",Balance:4500m),
+    };
+
+    var account = accounts.FirstOrDefault(a=> a.Id == id);
+    if (account == null)
+    {
+        return Results.NotFound();
+    }
+    
+    return Results.NoContent();
+    
+
+})
+.WithName("DeleteAccountById")
+.WithOpenApi();
+
+app.Run();
 
 /*
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
@@ -83,9 +122,7 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
 */
-record Account(int Id, string Owner, decimal Balance)
-{
-    
-};
+record Account(int Id, string Owner, decimal Balance) {};
+
 
 
