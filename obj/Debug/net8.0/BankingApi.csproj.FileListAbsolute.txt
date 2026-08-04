@@ -31,3 +31,4 @@
 /Users/avedismarkaryan/Kod/BankingApi/obj/Debug/net8.0/BankingApi.pdb
 /Users/avedismarkaryan/Kod/BankingApi/obj/Debug/net8.0/BankingApi.genruntimeconfig.cache
 /Users/avedismarkaryan/Kod/BankingApi/obj/Debug/net8.0/ref/BankingApi.dll
+/Users/avedismarkaryan/Kod/BankingApi/obj/Debug/net8.0/BankingApi.sourcelink.json

@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(); //bir servisi burada bir kere kaydediyorsun, sonra ihtiyaç duyan her yere .NET otomatik "enjekte" ediyor.
+builder.Services.AddControllers(); //controllerları tanımladığımız metot. controller'ları DI container'a kaydeder,
+
 
 var app = builder.Build(); //builder'ı gerçek uygulamayı oluşturuyor.
 
@@ -41,6 +43,7 @@ app.MapGet("/api/accounts", () => //örnek bir endpoint, MapGet-> GET isteğine 
 */
 
 //belirli bir accountu id ile çektiğimiz get endpoint 
+/*
 app.MapGet("/api/accounts/{id}",(int id) =>
 {
     var accounts = new []
@@ -58,8 +61,9 @@ app.MapGet("/api/accounts/{id}",(int id) =>
 })
 .WithName("GetAccountById")
 .WithOpenApi();
-
+*/
 //account eklediğimiz post endpoint 
+/*
 app.MapPost("/api/accounts",(Account newAccount) =>
 {
     if (string.IsNullOrWhiteSpace(newAccount.Owner)) //string metodunun boş gelme ihtimaline karşı aldığımız aksiyon.
@@ -73,12 +77,12 @@ app.MapPost("/api/accounts",(Account newAccount) =>
 })
 .WithName("CreateAccount")
 .WithOpenApi();
-
+*/
 
 
 
 //accountun balance'ını güncellediğimiz endpoint, put ile
-
+/*
 app.MapPut("/api/accounts/{id}", (int id, Account updatedAccount) =>
 {
     var accounts = new []
@@ -99,10 +103,10 @@ app.MapPut("/api/accounts/{id}", (int id, Account updatedAccount) =>
 })
 .WithName("UpdateAccount")
 .WithOpenApi();
-
+*/
 
 //accountu id ile tespit edip sildiğimiz delete endpointi
-
+/*
 app.MapDelete("/api/accounts/{id}",(int id) =>
 {
     var accounts = new []
@@ -125,10 +129,10 @@ app.MapDelete("/api/accounts/{id}",(int id) =>
 })
 .WithName("DeleteAccountById")
 .WithOpenApi();
-
+*/
 
 //Query String ile filtreleme yaptığımız get endpointi
-
+/*
 app.MapGet("/api/accounts",(decimal? minBalance , string? owner) =>
 {
     var accounts = new []
@@ -154,9 +158,10 @@ app.MapGet("/api/accounts",(decimal? minBalance , string? owner) =>
 })
 .WithDisplayName("GetAccountByCondition")
 .WithOpenApi();
+*/
 
 //Belirli bir bakiyenin altındaki hesapları getir
-
+/*
 app.MapGet("/api/accounts/low-balance",(decimal? threshold) =>
 {
     var accounts = new []
@@ -178,10 +183,10 @@ app.MapGet("/api/accounts/low-balance",(decimal? threshold) =>
 })
 .WithDisplayName("GetAccountsWithQuery")
 .WithOpenApi();
-
+*/
 
 //Hesap bakiyesine para ekle
-
+/*
 app.MapPatch("/api/accounts/{id}/deposit",(int id ,decimal amount) =>
 {
     var accounts = new []
@@ -209,12 +214,12 @@ app.MapPatch("/api/accounts/{id}/deposit",(int id ,decimal amount) =>
 })
 .WithDisplayName("PatchAccount")
 .WithOpenApi();
-
-
+*/
+app.MapControllers(); //ikincisi gelen HTTP isteklerini controller'lara yönlendirir.
 app.Run();
 
 
-record Account(int Id, string Owner, decimal Balance) {};
+//record Account(int Id, string Owner, decimal Balance) {};
 
 
 
