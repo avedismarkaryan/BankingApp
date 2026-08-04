@@ -1,5 +1,6 @@
 using System.Buffers;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(); //bir servisi burada bir kere kaydediyorsun, sonra ihtiyaç duyan her yere .NET otomatik "enjekte" ediyor.
 builder.Services.AddControllers(); //controllerları tanımladığımız metot. controller'ları DI container'a kaydeder,
-
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data Source=banking.db"));
 
 var app = builder.Build(); //builder'ı gerçek uygulamayı oluşturuyor.
 
