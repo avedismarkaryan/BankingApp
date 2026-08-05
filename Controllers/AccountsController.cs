@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController] //Bu bir attribute (C#'ta köşeli parantezle yazılan, sınıf veya metoda ek davranış kazandıran etiketler).
 [Route("api/accounts")]
+[Authorize]
 
 public class AccountsController : ControllerBase
 {

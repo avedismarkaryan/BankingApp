@@ -8,11 +8,53 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(); //bir servisi burada bir kere kaydediyorsun, sonra ihtiyaç duyan her yere .NET otomatik "enjekte" ediyor.
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Description = "Token girin"
+    });
+    options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    {
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                {
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+}); //bir servisi burada bir kere kaydediyorsun, sonra ihtiyaç duyan her yere .NET otomatik "enjekte" ediyor.
 builder.Services.AddControllers(); //controllerları tanımladığımız metot. controller'ları DI container'a kaydeder,
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data Source=banking.db"));
 builder.Services.AddScoped<IAccountRepository,AccountRepository>(); //IAccountRepository isteyene AccountRepository ver.
 builder.Services.AddScoped<IAccountService,AccountService>(); //IAccountService isteyene AccountService ver.
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
+                System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+        };
+    });
 
 
 var app = builder.Build(); //builder'ı gerçek uygulamayı oluşturuyor.
@@ -26,6 +68,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
 
 
 //accountları çektiğimiz get endpoint
