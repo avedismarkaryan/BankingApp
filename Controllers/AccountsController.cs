@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 public class AccountsController : ControllerBase
 {
     
-    private readonly AppDbContext _context;
+    private readonly IAccountService _service;
 
-    public AccountsController(AppDbContext context)
+    public AccountsController(IAccountService service)
     {
-        _context = context;
+        _service = service;
     }
 
     [HttpGet]
@@ -26,7 +26,7 @@ public class AccountsController : ControllerBase
             new Account{Id=5,Owner="ali",Balance=500},
         };
         */
-        var accounts = _context.Accounts.ToList();
+        var accounts = _service.GetAllAccounts();
         return Ok(accounts);
     }
 
@@ -34,7 +34,8 @@ public class AccountsController : ControllerBase
     public IActionResult GetById(int id) 
     {
 
-        var account = _context.Accounts.Find(id);//FirstOrDefaulta göre daha hızlı
+        //var account = _context.Accounts.Find(id);//FirstOrDefaulta göre daha hızlı
+        var account = _service.GetAccountById(id);
 
         if (account == null)
             return NotFound();
@@ -51,8 +52,11 @@ public class AccountsController : ControllerBase
         if(newAccount.Balance < 0 )
             return BadRequest();
 
-        _context.Accounts.Add(newAccount); //"bu nesneyi Accounts tablosuna ekle" der, ama henüz veritabanına yazmaz — sadece hafızada işaretler
-        _context.SaveChanges();//değişiklikleri gerçekten veritabanına yazar (INSERT SQL'i çalışır). Bu çağrı olmadan hiçbir şey kaydedilmez
+        //_context.Accounts.Add(newAccount); //"bu nesneyi Accounts tablosuna ekle" der, ama henüz veritabanına yazmaz — sadece hafızada işaretler
+        //_context.SaveChanges();//değişiklikleri gerçekten veritabanına yazar (INSERT SQL'i çalışır). Bu çağrı olmadan hiçbir şey kaydedilmez
+
+        _service.CreateAccount(newAccount);
+        
 
         return CreatedAtAction(nameof(GetById), new {id = newAccount.Id},newAccount);
     }
@@ -60,15 +64,22 @@ public class AccountsController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult PutAction(int id, Account newAccount)
     {
-        
-        var account = _context.Accounts.Find(id);
+        /*
+        var account = _service.GetAccountById(id);
         if (account == null)
             return NotFound();
         
         //var updatedAccount = account with {Owner = newAccount.Owner , Balance = newAccount.Balance};
+
         account.Owner = newAccount.Owner;
         account.Balance = newAccount.Balance;
-        _context.SaveChanges();
+        */
+
+        //updateAccount içinde yukardaki kontroller olduğu için sadeleştirme yapıldı.
+
+        var account = _service.UpdateAccount(id,newAccount);
+        if (account == null)
+            return NotFound();
 
         return Ok(account);
     }
@@ -76,30 +87,32 @@ public class AccountsController : ControllerBase
     [HttpPatch("{id}")]
     public IActionResult PatchAction(int id, decimal balance)
     {
-        
-        var account = _context.Accounts.Find(id);
-        if (account == null)
-            return NotFound();
-
-        if (balance <= 0 )
+        if (balance <= 0)
             return BadRequest();
 
-        account.Balance = account.Balance + balance;
-        _context.SaveChanges();
-
+        var account = _service.Deposit(id,balance);
+        if (account==null)
+            return NotFound();
+        
         return Ok(account);
-    }
+    }   
 
     [HttpDelete("{id}")]
     public IActionResult DeleteAction(int id)
     {
-        
-        var account = _context.Accounts.Find(id);
+        /*
+        var account = _service.GetAccountById(id);
         if(account == null)
             return NotFound();
-
+        */
+        /*
         _context.Accounts.Remove(account);
         _context.SaveChanges();
+        */
+
+        var result = _service.DeleteAccount(id);
+        if (result == false)
+            return NotFound();
         
         return NoContent();
     }

@@ -11,6 +11,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(); //bir servisi burada bir kere kaydediyorsun, sonra ihtiyaç duyan her yere .NET otomatik "enjekte" ediyor.
 builder.Services.AddControllers(); //controllerları tanımladığımız metot. controller'ları DI container'a kaydeder,
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data Source=banking.db"));
+builder.Services.AddScoped<IAccountRepository,AccountRepository>(); //IAccountRepository isteyene AccountRepository ver.
+builder.Services.AddScoped<IAccountService,AccountService>(); //IAccountService isteyene AccountService ver.
+
 
 var app = builder.Build(); //builder'ı gerçek uygulamayı oluşturuyor.
 
