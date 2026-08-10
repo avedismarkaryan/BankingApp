@@ -27,6 +27,8 @@ public class TransactionController : ControllerBase
         var transactions = _context.Transactions
             .Where(t=> t.AccountId == accountId)
             .ToList();
+        //neden where kullandık?
+        //çünkü find ile yapsaydık sadece transaction id'si 1 olan transactionı getirecekti. where ile hepsine eriştik ve hepsini getirdik.
 
         return Ok(transactions);
         

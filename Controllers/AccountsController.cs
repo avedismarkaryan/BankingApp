@@ -87,7 +87,7 @@ public class AccountsController : ControllerBase
     }
 
     [HttpPatch("{id}")]
-    public IActionResult PatchAction(int id, decimal balance)
+    public IActionResult PatchAction(int id, [FromBody] decimal balance)
     {
         if (balance <= 0)
             return BadRequest();
