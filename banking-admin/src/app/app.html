@@ -1,6 +1,9 @@
 <nav class="navbar">
   <span class="brand">Banking Admin</span>
-  <a routerLink="/customers">Hesaplar</a>
+  @if (isFeatureEnabled('customers')) {
+    <a routerLink="/customers">Hesaplar</a>
+  }
+  <a routerLink="/features">Feature Yönetimi</a>
 </nav>
 <main class="content">
   <router-outlet />

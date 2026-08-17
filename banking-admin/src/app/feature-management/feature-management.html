@@ -1,0 +1,11 @@
+<h2>Feature Yönetimi</h2>
+<ul>
+  @for (feature of features(); track feature.id) {
+    <li>
+      {{ feature.name }} — {{ feature.isEnabled ? 'Açık' : 'Kapalı' }}
+      <button (click)="toggle(feature)">
+        {{ feature.isEnabled ? 'Kapat' : 'Aç' }}
+      </button>
+    </li>
+  }
+</ul>
