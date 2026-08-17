@@ -1,0 +1,6 @@
+<h2>Hesaplar</h2>
+<ul>
+  @for (account of accounts(); track account.id) {
+    <li>{{ account.owner }} — {{ account.balance }} ₺</li>
+  }
+</ul>

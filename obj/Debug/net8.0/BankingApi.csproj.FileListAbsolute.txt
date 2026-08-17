@@ -142,3 +142,10 @@
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.postman_collection.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/angular.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/package-lock.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/package.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/tsconfig.app.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/tsconfig.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/tsconfig.spec.json
