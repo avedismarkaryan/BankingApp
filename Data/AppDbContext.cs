@@ -26,4 +26,6 @@ public class AppDbContext : DbContext //DbContext'ten miras almak => bu sınıf 
 
     }
 
+    public DbSet<Feature> Features {get;set;}
+
 }

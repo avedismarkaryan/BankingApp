@@ -66,6 +66,9 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddScoped<IFeatureRepository,FeatureRepository>();
+builder.Services.AddScoped<IFeatureService,FeatureService>();
+
 
 var app = builder.Build(); //builder'ı gerçek uygulamayı oluşturuyor.
 

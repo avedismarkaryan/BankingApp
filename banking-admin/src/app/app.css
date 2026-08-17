@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: #1e293b;
+  color: white;
+}
+
+.navbar .brand {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.navbar a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: white;
+}
+
+.content {
+  padding: 1.5rem;
+}
