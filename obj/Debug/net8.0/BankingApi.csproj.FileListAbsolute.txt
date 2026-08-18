@@ -149,3 +149,17 @@
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/tsconfig.app.json
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/tsconfig.json
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking-admin/tsconfig.spec.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/AssetManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/FontManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/NativeAssetsManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/FontManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/Runner.swiftmodule/arm64-apple-ios-simulator.abi.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/FontManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/web/manifest.json
