@@ -3,20 +3,25 @@ import 'services/auth_service.dart';
 import 'services/customer_service.dart';
 import 'services/transaction_service.dart';
 import 'services/transfer_service.dart';
+import 'package:provider/provider.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => AuthService(),
+      child: const MyApp(),
+      ),
+    );
 }
-//Uygulamanın kök noktası. Swiftteki window.rootViewController = ... atayıp window.makeKeyAndVisible() yapısına benzer.
 
-class MyApp extends StatelessWidget{
-  const MyApp ({super.key});
-  
-  @override 
-  Widget build(BuildContext context){
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Banking Mobile',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       home: const LoginPage(),
     );
@@ -174,10 +179,8 @@ class _CustomerListPageState extends State<CustomerListPage> {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final AuthService _authService = AuthService();
   String? _errorMessage;
   bool _isLoading = false;
 
@@ -187,7 +190,8 @@ class _LoginPageState extends State<LoginPage> {
       _errorMessage = null;
     });
 
-    final token = await _authService.login(
+    final authService = context.read<AuthService>();
+    final success = await authService.login(
       _emailController.text,
       _passwordController.text,
     );
@@ -196,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
       _isLoading = false;
     });
 
-    if (token != null) {
+    if (success) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const CustomerListPage()),
