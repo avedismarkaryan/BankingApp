@@ -56,6 +56,21 @@ public class AccountService : IAccountService
 
     }
 
+    public bool Transfer(int fromId, int toId, decimal amount)
+{
+    var from = _repository.GetById(fromId);
+    var to = _repository.GetById(toId);
+
+    if (from == null || to == null) return false;
+    if (from.Balance < amount) return false;
+
+    from.Balance -= amount;
+    to.Balance += amount;
+    _repository.Update(from);
+    _repository.Update(to);
+    return true;
+}
+
     
 
 

@@ -119,4 +119,17 @@ public class AccountsController : ControllerBase
         return NoContent();
     }
 
+    [HttpPost("transfer")]
+    public IActionResult Transfer([FromBody] TransferRequest request) {
+    if (request.Amount <= 0)
+        return BadRequest();
+
+    var result = _service.Transfer(request.FromAccountId, request.ToAccountId, request.Amount);
+    if (!result)
+        return BadRequest("Transfer başarısız.");
+
+    return Ok("Transfer başarılı.");
+    
+    }
+
 }

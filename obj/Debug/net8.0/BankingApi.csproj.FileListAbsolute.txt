@@ -200,3 +200,37 @@
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/web/manifest.json
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/obj/BankingApi.Tests.csproj.nuget.dgspec.json
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/obj/project.assets.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/appsettings.Development.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/appsettings.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking-admin/angular.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking-admin/package-lock.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking-admin/package.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking-admin/tsconfig.app.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking-admin/tsconfig.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking-admin/tsconfig.spec.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.deps.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.postman_collection.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.runtimeconfig.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests.deps.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests.runtimeconfig.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/AssetManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/FontManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/NativeAssetsManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/FontManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/Runner.swiftmodule/arm64-apple-ios-simulator.abi.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/shared_preferences_foundation/shared_preferences_foundation.framework/Modules/shared_preferences_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/shared_preferences_foundation/shared_preferences_foundation.framework/Modules/shared_preferences_foundation.swiftmodule/x86_64-apple-ios-simulator.abi.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/FontManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/ios/Pods/Local Podspecs/Flutter.podspec.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/ios/Pods/Local Podspecs/shared_preferences_foundation.podspec.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/banking_mobile/web/manifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/obj/BankingApi.Tests.csproj.nuget.dgspec.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/bin/Debug/net8.0/BankingApi.Tests/obj/project.assets.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/BankingApi.Tests/obj/Debug/net8.0/BankingApi.Tests.sourcelink.json

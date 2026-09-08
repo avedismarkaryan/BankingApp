@@ -6,6 +6,7 @@ public interface IAccountService
     Account? UpdateAccount(int id, Account account);
     Account? Deposit(int id, decimal amount);
     bool DeleteAccount(int id);
+    bool Transfer(int fromId, int toId, decimal amount);
 
 
 
