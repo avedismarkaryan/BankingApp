@@ -163,3 +163,7 @@
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
 /Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/web/manifest.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/shared_preferences_foundation/shared_preferences_foundation.framework/Modules/shared_preferences_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/build/ios/Debug-iphonesimulator/shared_preferences_foundation/shared_preferences_foundation.framework/Modules/shared_preferences_foundation.swiftmodule/x86_64-apple-ios-simulator.abi.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/ios/Pods/Local Podspecs/Flutter.podspec.json
+/Users/avedismarkaryan/Kod/BankingApi/bin/Debug/net8.0/banking_mobile/ios/Pods/Local Podspecs/shared_preferences_foundation.podspec.json

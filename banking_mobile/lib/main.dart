@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'services/auth_service.dart';
+import 'services/customer_service.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -27,6 +28,62 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
+class CustomerListPage extends StatefulWidget {
+  const CustomerListPage({super.key});
+
+  @override
+  State<CustomerListPage> createState() => _CustomerListPageState();
+}
+
+class _CustomerListPageState extends State<CustomerListPage> {
+  final CustomerService _customerService = CustomerService();
+  List<Account> _accounts = [];
+  bool _isLoading = true;
+  String? _errorMessage;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAccounts();
+  }
+
+  Future<void> _loadAccounts() async {
+    try {
+      final accounts = await _customerService.getAll();
+      setState(() {
+        _accounts = accounts;
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _errorMessage = e.toString();
+        _isLoading = false;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Hesaplar')),
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : _errorMessage != null
+              ? Center(child: Text(_errorMessage!))
+              : ListView.builder(
+                  itemCount: _accounts.length,
+                  itemBuilder: (context, index) {
+                    final account = _accounts[index];
+                    return ListTile(
+                      title: Text(account.owner),
+                      trailing: Text('${account.balance} ₺'),
+                    );
+                  },
+                ),
+    );
+  }
+}
+
 class _LoginPageState extends State<LoginPage> {
 
   final TextEditingController _emailController = TextEditingController();
@@ -51,7 +108,10 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     if (token != null) {
-      print('Giriş başarılı, token: $token');
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const CustomerListPage()),
+      );
     } else {
       setState(() {
         _errorMessage = 'Giriş başarısız. Email veya şifre hatalı.';
