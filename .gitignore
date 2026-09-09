@@ -1,0 +1,23 @@
+# .NET
+bin/
+obj/
+
+# Database
+banking.db
+
+# Angular
+banking-admin/node_modules/
+banking-admin/.angular/
+
+# Flutter
+banking_mobile/.dart_tool/
+banking_mobile/.packages
+banking_mobile/build/
+
+# IDE
+.vs/
+.vscode/
+*.user
+
+# macOS
+.DS_Store
